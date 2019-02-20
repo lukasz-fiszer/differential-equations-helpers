@@ -4,7 +4,7 @@ A collection of helper functions/scripts/procedures related to differential equa
 
 #### Plot direction field and a function
 
-This function is used for plotting direction field and explicit functions on the same graph. It is a particularly handy procedure for checking a solution to a first order differential equation by graphically checking if proposed solutions align with slope vectors. See `plotDirectionFieldAndFunction.m` for further documentation.
+This MATLAB/OCTAVE function is used for plotting direction field and explicit functions on the same graph. It is a particularly handy procedure for checking a solution to a first order differential equation by graphically checking if proposed solutions align with slope vectors. See `plotDirectionFieldAndFunction.m` for further documentation.
 
 Usage:
 

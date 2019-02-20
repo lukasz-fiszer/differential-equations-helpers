@@ -30,11 +30,11 @@
 % Author: Łukasz Fiszer
 % 	
 
-function [quiverobject, fig] = plotDirectionFieldAndFunction(xrange, yrange, yderivative, yfunctions = {}, filename)
+function [quiverobject, fig] = plotDirectionFieldAndFunction(xrange, yrange, yderivative, yfunctions, filename)
 	% assert proper range descriptors
-	assert(length(xrange(:)) == 3 && isnumeric(xrange), 
+	assert(length(xrange(:)) == 3 && isnumeric(xrange), ...
 		'First argument (xrange) must be a vector of the form [min step max]');
-	assert(length(yrange(:)) == 3 && isnumeric(yrange), 
+	assert(length(yrange(:)) == 3 && isnumeric(yrange), ...
 		'Second argument (yrange) must be a vector of the form [min step max]');
 
 	% generate meshgrid of (x, y) values
@@ -61,10 +61,16 @@ function [quiverobject, fig] = plotDirectionFieldAndFunction(xrange, yrange, yde
 	% by default use 10 times more dense x values for plotting the function
 	xfuncspace = xrange(1):xrange(2)/10:xrange(3);
 
+	% check if optional yfunctions argument was passed, 
+	% if not initialize it to a default value of an empty cell array
+	if ~exist('yfunctions')
+		yfunctions = {};
+	end
+
 	% if a single function was given directly, wrap it into a cell array
 	if isa(yfunctions, 'function_handle')
 		yfunctions = {yfunctions};
-	endif
+	end
 
 	% iterate over the functions and plot each
 	for i = 1:length(yfunctions)
@@ -77,4 +83,4 @@ function [quiverobject, fig] = plotDirectionFieldAndFunction(xrange, yrange, yde
 		print(fig, filename)
 	end
 
-endfunction
+end
