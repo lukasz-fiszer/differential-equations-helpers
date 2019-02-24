@@ -35,3 +35,19 @@ Usage:
 ```
 ![Direction field usage 4](docs/sf4.svg)
 
+#### Euler method
+
+The MATLAB/OCTAVE eulerMethod() function implements forward Euler method. The function arguments are the vector of x values, initial y(x_0) = y_0 value and the y derivative y' = f(x, y). See `eulerMethod.m` for further documentation.
+
+Usage:
+
+```matlab
+% approximate y(x) with Euler method
+x = 0:0.01:2;
+y = eulerMethod(x, 1, @(x, y) e^x);
+% plot with exact solution
+plot(x, y);
+hold on;
+plot(x, e.^x);
+```
+
