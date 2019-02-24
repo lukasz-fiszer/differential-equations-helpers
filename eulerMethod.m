@@ -18,6 +18,9 @@
 % Return values:
 % 	y: the approximation of y(x) for given vector of x values
 % 
+% Note, yderivative is used only with scalar arguments (ie, the vector of inputs one by one),
+% so it does not have to distinguish between matrix and element-wise operations
+% 
 % Usage:
 % 	y = eulerMethod(0:0.01:2, 1, @(x, y) exp(x))
 % 	y = eulerMethod(x, 1, @(x, y) x^4 + 2*x - x^2*y);

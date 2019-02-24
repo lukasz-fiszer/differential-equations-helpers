@@ -18,6 +18,9 @@
 % 	quiverobject: a Quiver object returned from calling quiver()
 % 	fig: a Figure object of the plot created
 % 
+% Note, yderivative and yfunctions will be given vectors of inputs x, y, 
+% so they should be properly vectorised (accounting for element-wise operations)
+% 
 % Usage:
 % 	[quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y)
 % 	[quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, @(x) 0.25*exp((x.^2)./2))
