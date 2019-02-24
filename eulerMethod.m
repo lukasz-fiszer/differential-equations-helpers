@@ -19,7 +19,7 @@
 % 	y: the approximation of y(x) for given vector of x values
 % 
 % Usage:
-% 	y = eulerMethod(0:0.01:2, 1, @(x, y) e^x)
+% 	y = eulerMethod(0:0.01:2, 1, @(x, y) exp(x))
 % 	y = eulerMethod(x, 1, @(x, y) x^4 + 2*x - x^2*y);
 % 	
 % Author: Łukasz Fiszer

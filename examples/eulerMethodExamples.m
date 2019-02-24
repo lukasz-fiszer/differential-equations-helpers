@@ -28,5 +28,5 @@ plot(x, y1);
 hold on;
 plot(x, y2);
 plot(x, x.^2);
-plot(x, exp(-x.^3/3)+x.^2);
+plot(x, exp(-x.^3/3) + x.^2);
 legend('y1 exact', 'y2 exact', 'y1 approximation by Euler method', 'y2 approximation by Euler method')

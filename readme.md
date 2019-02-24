@@ -16,14 +16,14 @@ Usage:
 
 ```matlab
 % Plotting with an explicit function
-[quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, @(x) 0.25*e.^((x.^2)./2))
+[quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, @(x) 0.25*exp((x.^2)./2))
 ```
 ![Direction field usage 2](docs/sf2.svg)
 
 ```matlab
 % Plotting with more than one explicit function
 [quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, 
-    {@(x) 0.25*e.^((x.^2)./2), @(x) e.^((x.^2)./2), @(x) (-1)*e.^((x.^2)./2), @(x) (-0.25)*e.^((x.^2)./2), @(x) 0*e.^((x.^2)./2)})
+    {@(x) 0.25*exp((x.^2)./2), @(x) exp((x.^2)./2), @(x) (-1)*exp((x.^2)./2), @(x) (-0.25)*exp((x.^2)./2), @(x) 0*exp((x.^2)./2)})
 ```
 ![Direction field usage 3](docs/sf3.svg)
 
@@ -44,10 +44,10 @@ Usage:
 ```matlab
 % approximate y(x) with Euler method
 x = 0:0.01:2;
-y = eulerMethod(x, 1, @(x, y) e^x);
+y = eulerMethod(x, 1, @(x, y) exp(x));
 % plot with exact solution
 plot(x, y);
 hold on;
-plot(x, e.^x);
+plot(x, exp(x));
 ```
 

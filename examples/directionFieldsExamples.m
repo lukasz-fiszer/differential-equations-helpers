@@ -4,11 +4,11 @@ addpath('../');
 [quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y)
 
 % Plotting with an explicit function
-[quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, @(x) 0.25*e.^((x.^2)./2))
+[quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, @(x) 0.25*exp((x.^2)./2))
 
 % Plotting with more than one explicit function
 [quiv, fig] = plotDirectionFieldAndFunction([-1 0.1 2], [-1 0.1 1], @(x, y) x.*y, 
-	{@(x) 0.25*e.^((x.^2)./2), @(x) e.^((x.^2)./2), @(x) (-1)*e.^((x.^2)./2), @(x) (-0.25)*e.^((x.^2)./2), @(x) 0*e.^((x.^2)./2)})
+	{@(x) 0.25*exp((x.^2)./2), @(x) exp((x.^2)./2), @(x) (-1)*exp((x.^2)./2), @(x) (-0.25)*exp((x.^2)./2), @(x) 0*exp((x.^2)./2)})
 
 % Plotting and saving figure to a file
 % this code saves the created figure to a file called arcsinh-de.pdf 
